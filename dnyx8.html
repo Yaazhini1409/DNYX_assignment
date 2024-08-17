@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Assignment 8</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ff7eb3, #ff758c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+            
+        }
+
+        input[type="password"], button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Update Password</h2>
+    <form id="updatePasswordForm">
+        <label>New password</label>
+        <input type="password" id="newPassword" placeholder="New Password">
+        <p id="newPasswordErrMsg" class="error-message"></p>
+        <label>Confirm password</label>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <p id="confirmPasswordErrMsg" class="error-message"></p>
+        
+        <button type="submit" id="updateBtn">Update</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('newPassword').addEventListener('blur', validateNewPassword);
+    document.getElementById('confirmPassword').addEventListener('blur', validateConfirmPassword);
+    document.getElementById('updatePasswordForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        validateNewPassword();
+        validateConfirmPassword();
+        validatePasswordMatch();
+    });
+
+    function validateNewPassword() {
+        const newPassword = document.getElementById('newPassword').value;
+        const newPasswordErrMsg = document.getElementById('newPasswordErrMsg');
+        if (newPassword === '') {
+            newPasswordErrMsg.textContent = 'New Password cannot be empty';
+        } else {
+            newPasswordErrMsg.textContent = '';
+        }
+    }
+
+    function validateConfirmPassword() {
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const confirmPasswordErrMsg = document.getElementById('confirmPasswordErrMsg');
+        if (confirmPassword === '') {
+            confirmPasswordErrMsg.textContent = 'Confirm Password cannot be empty';
+        } else {
+            confirmPasswordErrMsg.textContent = '';
+        }
+    }
+
+    function validatePasswordMatch() {
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const confirmPasswordErrMsg = document.getElementById('confirmPasswordErrMsg');
+        
+        if (newPassword !== '' && confirmPassword !== '' && newPassword !== confirmPassword) {
+            confirmPasswordErrMsg.textContent = 'Passwords do not match';
+        } else if (newPassword === confirmPassword) {
+            confirmPasswordErrMsg.textContent = '';
+        }
+    }
+</script>
+
+
+</body>
+</html>
