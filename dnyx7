@@ -1,0 +1,65 @@
+Questions:
+1) JavaScript is a programming language used for creating interactive and dynamic content on websites. It allows developers to implement features like animations, form validation, and user interactions. JavaScript runs on the client side (in the browser) but can also be used on the server side with environments like Node.js.
+2)  let userAge = 25;
+    let userName = "John Doe";
+    console.log("User Age:", userAge);
+    console.log("User Name:", userName);
+3)  /*
+    This function greets a user by name.
+    It takes a single parameter 'name' and returns a greeting message.
+   */
+4) let num1 = 4;
+   let num2 = 5;
+   let sum = num1+num2;
+   let diff = num1 - num2;
+   let product = num1 * num2;
+   let quotient = num1 / num2;
+   console.log("Sum: ", sum);
+   console.log("Diff: ", diff);
+   console.log("Product:", product);  
+   console.log("Quotient:", quotient);  
+5) String:
+      A sequence of characters, typically used to represent text.
+        
+  let string = "Hello, World!";
+  console.log("String Example:", string); 
+  
+  Number: 
+      Represents both integer and floating-point numbers.
+  
+  let number = 42;
+  console.log("Number Example:", number);  
+
+  Boolean: 
+      A logical data type that can have only two values: true or false.
+        
+  let boolean = true;
+  console.log("Boolean Example:", boolean);  
+
+  Array: 
+      A collection of elements, which can be of any data type, stored in a single variable.
+        
+  let array = [1, 2, 3, 4, 5];
+  console.log("Array Example:", array); 
+6) function greetUser(name) {
+    return "Hello, " + name + "!";
+  }
+  console.log(greetUser("Alice"));  
+7) let temperature = 32;
+   if (temperature > 30) {
+        console.log("It's hot outside");  
+    } else {
+        console.log("The weather is cool.");
+    }
+8) for (let i = 1; i <= 5; i++) {
+    console.log(i);
+  }
+9) Loose Equality (==): Compares two values for equality after converting both values to a common type.
+   console.log(5 == '5'); 
+   Output: true
+   Strict Equality (===): Compares two values for equality without converting their data types.
+   console.log(5 === '5');  
+   Output: false
+  
+  
+
